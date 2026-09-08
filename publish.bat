@@ -32,6 +32,10 @@ set platform=x64
 call :publish
 if errorlevel 1 (pause & exit /b 1)
 
+set platform=ARM64
+call :publish
+if errorlevel 1 (pause & exit /b 1)
+
 rem Since BCU is on .NET 10, realistically only Arm64 and x64 Windows systems are supported now, so there's no point in building x86
 rem set platform=x86
 rem call :publish
@@ -78,6 +82,7 @@ rem -------------------------------------------------------------
 
 :publish
 set identifier=win-%platform%
+if /i "%platform%"=="ARM64" set identifier=win-arm64
 set target=%CD%\bin\publish\%identifier%
 set selfContained=True
 set runtime=/p:RuntimeIdentifier=%identifier%

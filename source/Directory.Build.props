@@ -1,6 +1,6 @@
 <Project>
 	<PropertyGroup>
-		<Version>6.2</Version>
+		<Version>6.3</Version>
 
 		<Authors>https://github.com/Klocman/Bulk-Crap-Uninstaller</Authors>
 		<Copyright>Copyright Apache-2.0 © 2026</Copyright>
@@ -44,6 +44,7 @@
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Platform)'=='ARM64'">
 		<RuntimeIdentifier>win-arm64</RuntimeIdentifier>
+		<GenerateSatelliteAssembliesForCore>true</GenerateSatelliteAssembliesForCore>
 	</PropertyGroup>
 
 	<PropertyGroup Condition=" '$(Configuration)' == 'Release' ">

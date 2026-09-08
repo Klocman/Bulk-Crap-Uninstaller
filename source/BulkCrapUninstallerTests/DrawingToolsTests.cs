@@ -12,14 +12,14 @@ namespace BulkCrapUninstallerTests
         public void CreateOwnedIconFromHandle_ReturnsUsableClone()
         {
             using var sourceIcon = SystemIcons.Application;
-            var handle = sourceIcon.GetHicon();
+            var handle = sourceIcon.Handle;
 
             using var ownedIcon = DrawingTools.CreateOwnedIconFromHandle(handle);
             using var stream = new MemoryStream();
 
             ownedIcon.Save(stream);
 
-            Assert.IsTrue(stream.Length > 0);
+            Assert.IsGreaterThan(0, stream.Length);
             Assert.AreEqual(sourceIcon.Size, ownedIcon.Size);
         }
     }

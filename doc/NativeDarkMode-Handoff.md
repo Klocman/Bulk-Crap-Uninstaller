@@ -5,6 +5,9 @@ out of investigating the dark-mode problem discussed in
 [PR #962](https://github.com/BCUninstaller/Bulk-Crap-Uninstaller/pull/962).
 It does not implement that PR's broader core refactor or remove COM dependencies.
 
+The branch is synchronized with upstream commit `30da609`, which includes the
+v6.3 release tag (`2e53fc1`) and the following README ordering update.
+
 ## Start here
 
 Read [build instructions and architecture](NativeDarkMode.md), then the
@@ -36,6 +39,14 @@ tooltip event handlers and the two known `ToolTip` owners in Properties/Settings
 and the uninstall wizard.
 
 ## Latest validation and its limits
+
+After the v6.3 synchronization on 2026-09-08, the .NET 10 application project
+restored and compiled locally with the existing warnings. The updated test project
+compiled and ran 56 tests: 52 passed, one was skipped, and three rating tests could
+not reach `bugsklocman.ddns.net:7721` because the local application firewall blocks
+that endpoint. Upstream's v6.3 CI passes the same suite. The v6.3 native launcher
+also built successfully with the local MFC-equipped Visual Studio installation.
+The refreshed full-solution CI run remains the authoritative post-merge check.
 
 Before the solution-wide .NET 10 migration, the focused repair pass completed fresh
 .NET 8 and .NET 10 builds. Fresh external-checker runs recorded 631

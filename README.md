@@ -18,8 +18,8 @@ Bulk Crap Uninstaller is licensed under Apache 2.0 open source license, and can 
 ## Download
 You can get the latest version from the releases page. Alternatively you can download it from one of these hosts:
 - [Download from dAppCDN](https://dappcdn.com/download/utilities/bulk-crap-uninstaller)
-- [Download from FossHub](https://www.fosshub.com/Bulk-Crap-Uninstaller.html)
 - [Download from SourceForge](https://sourceforge.net/projects/bulk-crap-uninstaller/)
+- [Download from FossHub](https://www.fosshub.com/Bulk-Crap-Uninstaller.html)
 
 #### What are the different variants?
 - Setup - Installs BCU as a normal application. If your system is missing the required .NET runtime, it is automatically installed as well.

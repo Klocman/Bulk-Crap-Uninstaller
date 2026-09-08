@@ -153,6 +153,9 @@
   <data name="label2.Text" xml:space="preserve">
     <value>Створювати точку відновлення перед видаленням</value>
   </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Подвійний клац у списку програм</value>
+  </data>
   <data name="groupBoxMessages.Text" xml:space="preserve">
     <value>Вікна повідомлень</value>
   </data>

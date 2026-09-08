@@ -16,9 +16,9 @@ namespace BulkCrapUninstallerTests
             {
                 File.WriteAllText(path, string.Empty);
 
-                var ex = Assert.ThrowsException<InvalidDataException>(() => UninstallList.ReadFromFile(path));
+                var ex = Assert.Throws<InvalidDataException>(() => UninstallList.ReadFromFile(path));
 
-                StringAssert.Contains(ex.Message, "empty");
+                Assert.Contains("empty", ex.Message);
             }
             finally
             {
@@ -32,7 +32,7 @@ namespace BulkCrapUninstallerTests
             var path = Path.GetTempFileName();
             try
             {
-                var input = new UninstallList(new[] { new Filter("Test", "Example App") });
+                var input = new UninstallList([new Filter("Test", "Example App")]);
                 input.SaveToFile(path);
 
                 var originalContents = File.ReadAllText(path);
@@ -41,7 +41,7 @@ namespace BulkCrapUninstallerTests
                 var result = UninstallList.ReadFromFile(path);
 
                 Assert.IsNotNull(result);
-                Assert.AreEqual(1, result.Filters.Count);
+                Assert.HasCount(1, result.Filters);
                 Assert.AreEqual("Test", result.Filters[0].Name);
                 Assert.AreEqual("Example App", result.Filters[0].ComparisonEntries[0].FilterText);
             }

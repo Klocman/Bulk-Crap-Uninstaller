@@ -32,6 +32,19 @@ BOOL Is64BitOS()
 	return bIs64BitOS;
 }
 
+BOOL IsArm64OS()
+{
+	typedef BOOL(WINAPI* LPFN_ISWOW64PROCESS2) (HANDLE, PUSHORT, PUSHORT);
+
+	LPFN_ISWOW64PROCESS2 fnIsWow64Process2 = (LPFN_ISWOW64PROCESS2)GetProcAddress(GetModuleHandle(L"kernel32"), "IsWow64Process2");
+	USHORT processMachine = IMAGE_FILE_MACHINE_UNKNOWN;
+	USHORT nativeMachine = IMAGE_FILE_MACHINE_UNKNOWN;
+
+	return NULL != fnIsWow64Process2
+		&& fnIsWow64Process2(GetCurrentProcess(), &processMachine, &nativeMachine)
+		&& nativeMachine == IMAGE_FILE_MACHINE_ARM64;
+}
+
 std::wstring GetLastErrorAsString()
 {
 	//Get the error message ID, if any.
@@ -90,7 +103,16 @@ int main()
 {
 	std::wstring p;
 
-	if (Is64BitOS())
+	if (IsArm64OS())
+	{
+		p = ExePath() + L"\\win-arm64\\BCUninstaller.exe";
+		if (!fexists(p))
+		{
+			MessageBox(nullptr, L"This installation of BCUninstaller does not have files needed to run on ARM64 versions of Windows.\n\nDownload an ARM64 version of BCUninstaller and try again.", L"Could not start BCUninstaller.", MB_ICONERROR | MB_OK);
+			return 1;
+		}
+	}
+	else if (Is64BitOS())
 	{
 		p = ExePath() + L"\\win-x64\\BCUninstaller.exe";
 		if (!fexists(p))

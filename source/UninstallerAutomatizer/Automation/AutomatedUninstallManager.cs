@@ -125,7 +125,18 @@ namespace UninstallerAutomatizer
                     // and select the last one to launch. (Most likely to be ours)
                     var uninstallProcess = Process.GetProcesses()
                         .Where(x => x.ProcessName.Length == 3 && x.ProcessName.EndsWith("u_", StringComparison.Ordinal))
-                        .OrderByDescending(x => x.StartTime).First();
+                        .OrderByDescending(p =>
+                        {
+                            try
+                            {
+                                return p.StartTime;
+                            }
+                            catch
+                            {
+                                return DateTime.MinValue;
+                            }
+                        }).FirstOrDefault();
+                    if (uninstallProcess == null) throw new IOException("Could not find NSIS uninstaller process");
                     app = Application.Attach(uninstallProcess);
                 }
             }

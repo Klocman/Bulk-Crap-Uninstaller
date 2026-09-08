@@ -1,0 +1,590 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutUrl" xml:space="preserve">
+    <value>누리집</value>
+  </data>
+  <data name="BundleProviderKey" xml:space="preserve">
+    <value>제품 코드</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>표시 이름</value>
+  </data>
+  <data name="DisplayNameTrimmed" xml:space="preserve">
+    <value>잘린 표시 이름</value>
+  </data>
+  <data name="DisplayVersion" xml:space="preserve">
+    <value>버전</value>
+  </data>
+  <data name="EstimatedSize" xml:space="preserve">
+    <value>예상 크기</value>
+  </data>
+  <data name="InstallDate" xml:space="preserve">
+    <value>설치일</value>
+  </data>
+  <data name="InstallLocation" xml:space="preserve">
+    <value>설치 위치</value>
+  </data>
+  <data name="InstallSource" xml:space="preserve">
+    <value>설치 원본</value>
+  </data>
+  <data name="Is64Bit" xml:space="preserve">
+    <value>64비트 응용 프로그램 여부</value>
+  </data>
+  <data name="IsProtected" xml:space="preserve">
+    <value>보호됨 여부</value>
+  </data>
+  <data name="IsUpdate" xml:space="preserve">
+    <value>업데이트 여부</value>
+  </data>
+  <data name="IsValid" xml:space="preserve">
+    <value>유효함 여부</value>
+  </data>
+  <data name="ModifyPath" xml:space="preserve">
+    <value>경로 수정</value>
+  </data>
+  <data name="Publisher" xml:space="preserve">
+    <value>제조사 이름</value>
+  </data>
+  <data name="PublisherTrimmed" xml:space="preserve">
+    <value>잘린 제조사 이름</value>
+  </data>
+  <data name="QuietUninstallPossible" xml:space="preserve">
+    <value>조용한 제거 가능</value>
+  </data>
+  <data name="QuietUninstallString" xml:space="preserve">
+    <value>조용한 제거 문자열</value>
+  </data>
+  <data name="RegistryKeyName" xml:space="preserve">
+    <value>레지스트리 키 이름</value>
+  </data>
+  <data name="RegistryPath" xml:space="preserve">
+    <value>레지스트리 경로</value>
+  </data>
+  <data name="SystemComponent" xml:space="preserve">
+    <value>시스템 구성 요소 여부</value>
+  </data>
+  <data name="UninstallerFullFilename" xml:space="preserve">
+    <value>제거 프로그램 파일 이름</value>
+  </data>
+  <data name="UninstallerKind" xml:space="preserve">
+    <value>제거 프로그램 종류</value>
+  </data>
+  <data name="UninstallPossible" xml:space="preserve">
+    <value>제거 가능</value>
+  </data>
+  <data name="UninstallString" xml:space="preserve">
+    <value>제거 문자열</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>설명</value>
+  </data>
+  <data name="DisplayIcon" xml:space="preserve">
+    <value>표시된 아이콘</value>
+  </data>
+  <data name="Error_InvalidPath" xml:space="preserve">
+    <value>잘못된 경로</value>
+  </data>
+  <data name="JunkRemover_Confidence" xml:space="preserve">
+    <value>신뢰도</value>
+  </data>
+  <data name="ManagerError_PrematureWorkerStop" xml:space="preserve">
+    <value>작업이 수동으로 중지되었습니다</value>
+  </data>
+  <data name="ManagerError_Skipped" xml:space="preserve">
+    <value>사용자에 의해 건너뛰어졌습니다</value>
+  </data>
+  <data name="UninstallerLocation" xml:space="preserve">
+    <value>제거 프로그램 위치</value>
+  </data>
+  <data name="UninstallError_Nowaytouninstall" xml:space="preserve">
+    <value>이 항목을 제거할 유효한 방법이 없습니다</value>
+  </data>
+  <data name="UninstallError_UninstallerReturnedCode" xml:space="preserve">
+    <value>제거 프로그램이 다음 오류 코드를 반환했습니다:</value>
+  </data>
+  <data name="Confidence_Bad" xml:space="preserve">
+    <value>나쁨</value>
+  </data>
+  <data name="Confidence_Good" xml:space="preserve">
+    <value>좋음</value>
+  </data>
+  <data name="Confidence_Questionable" xml:space="preserve">
+    <value>의심스러움</value>
+  </data>
+  <data name="Confidence_Unknown" xml:space="preserve">
+    <value>알 수 없음</value>
+  </data>
+  <data name="Confidence_VeryGood" xml:space="preserve">
+    <value>매우 좋음</value>
+  </data>
+  <data name="ParentKeyName" xml:space="preserve">
+    <value>상위 제거 프로그램</value>
+    <comment>Most of the time used to show parent application of an update</comment>
+  </data>
+  <data name="ConfidencePart_CompanyNameDidNotMatch" xml:space="preserve">
+    <value>회사 이름이 일치하지 않습니다</value>
+  </data>
+  <data name="ConfidencePart_CompanyNameMatch" xml:space="preserve">
+    <value>회사 이름이 일치합니다</value>
+  </data>
+  <data name="ConfidencePart_DirectoryStillUsed" xml:space="preserve">
+    <value>디렉토리는 다른 설치된 응용 프로그램들에 의해 사용 중입니다</value>
+  </data>
+  <data name="ConfidencePart_ExplicitConnection" xml:space="preserve">
+    <value>항목이 제거 프로그램에 명시적으로 기재되어 있습니다</value>
+  </data>
+  <data name="ConfidencePart_IsUninstallerRegistryKey" xml:space="preserve">
+    <value>제거 프로그램 레지스트리 항목</value>
+  </data>
+  <data name="ConfidencePart_ItemNameEqualsCompanyName" xml:space="preserve">
+    <value>항목은 전체 제조사 카테고리에 속하는 것으로 보입니다</value>
+  </data>
+  <data name="ConfidencePart_ProductNameDodgyMatch" xml:space="preserve">
+    <value>제품명이 거의 일치하지 않습니다</value>
+  </data>
+  <data name="ConfidencePart_ProductNamePerfectMatch" xml:space="preserve">
+    <value>제품명이 완벽히 일치합니다.</value>
+  </data>
+  <data name="ConfidencePart_QuestionableDirectoryName" xml:space="preserve">
+    <value>디렉토리 이름이 의심스럽습니다.</value>
+  </data>
+  <data name="UninstallerType_Unknown" xml:space="preserve">
+    <value>알 수 없음</value>
+  </data>
+  <data name="UninstallerType_Msiexec" xml:space="preserve">
+    <value>윈도우즈 설치 관리자</value>
+  </data>
+  <data name="UninstallerType_InnoSetup" xml:space="preserve">
+    <value>Inno Setup</value>
+  </data>
+  <data name="UninstallerType_Steam" xml:space="preserve">
+    <value>스팀</value>
+  </data>
+  <data name="UninstallerType_NSIS" xml:space="preserve">
+    <value>Nullsoft 스크립트 가능 설치 시스템</value>
+  </data>
+  <data name="UninstallerType_InstallShield" xml:space="preserve">
+    <value>InstallShield</value>
+  </data>
+  <data name="UninstallerType_SdbInst" xml:space="preserve">
+    <value>SDBInst</value>
+  </data>
+  <data name="UninstallStatus_Completed" xml:space="preserve">
+    <value>완료됨</value>
+  </data>
+  <data name="UninstallStatus_Failed" xml:space="preserve">
+    <value>실패함</value>
+  </data>
+  <data name="UninstallStatus_Invalid" xml:space="preserve">
+    <value>유효하지 않음</value>
+  </data>
+  <data name="UninstallStatus_Protected" xml:space="preserve">
+    <value>보호됨</value>
+  </data>
+  <data name="UninstallStatus_Skipped" xml:space="preserve">
+    <value>건너뛰어짐</value>
+  </data>
+  <data name="UninstallStatus_Uninstalling" xml:space="preserve">
+    <value>제거하고 있음</value>
+  </data>
+  <data name="UninstallStatus_Waiting" xml:space="preserve">
+    <value>대기 하고 있음</value>
+  </data>
+  <data name="IsRegistered" xml:space="preserve">
+    <value>응용 프로그램 등록됨</value>
+  </data>
+  <data name="UninstallListEditor_InvalidFilter" xml:space="preserve">
+    <value>잘못된 필터</value>
+  </data>
+  <data name="UninstallListEditor_NewFilter" xml:space="preserve">
+    <value>새 필터</value>
+  </data>
+  <data name="UninstallListEditor_NothingMatched" xml:space="preserve">
+    <value>일치하는 항목 없음</value>
+  </data>
+  <data name="FilterComparisonMethod_Contains" xml:space="preserve">
+    <value>포함</value>
+  </data>
+  <data name="FilterComparisonMethod_EndsWith" xml:space="preserve">
+    <value>다음으로 끝남</value>
+  </data>
+  <data name="FilterComparisonMethod_Equals" xml:space="preserve">
+    <value>같음</value>
+  </data>
+  <data name="FilterComparisonMethod_Regex" xml:space="preserve">
+    <value>정규 표현식</value>
+  </data>
+  <data name="FilterComparisonMethod_StartsWith" xml:space="preserve">
+    <value>다음으로 시작함</value>
+  </data>
+  <data name="UninstallerType_WindowsFeature" xml:space="preserve">
+    <value>윈도우즈 기능들</value>
+    <comment>Used to mark windows features on the uninstaller list</comment>
+  </data>
+  <data name="FilterComparisonMethod_Any" xml:space="preserve">
+    <value>임의의 항목 포함</value>
+    <comment>As in "matches any word from this string"</comment>
+  </data>
+  <data name="StartupEntries" xml:space="preserve">
+    <value>시작 프로그램들</value>
+  </data>
+  <data name="StartupManager_Message_Delete_Details" xml:space="preserve">
+    <value>이 항목들은 더 이상 시작할 때 열리지 않습니다. 삭제하기 전에 선택한 항목들이 필요하지 않은지 확인하세요.</value>
+  </data>
+  <data name="StartupManager_Message_Delete_Header" xml:space="preserve">
+    <value>선택한 프로그램들을 시작 프로그램들에서 제거하겠습니까?</value>
+  </data>
+  <data name="StartupManager_Message_Delete_Title" xml:space="preserve">
+    <value>시작 프로그램 관리자</value>
+  </data>
+  <data name="StartupManager_Loading" xml:space="preserve">
+    <value>...을 불러오고 있음</value>
+  </data>
+  <data name="Confidence_PF_EmptyFolder" xml:space="preserve">
+    <value>빈 폴더들</value>
+  </data>
+  <data name="Confidence_PF_ExecsPresent" xml:space="preserve">
+    <value>실행 파일들이 존재함</value>
+  </data>
+  <data name="Confidence_PF_FilesPresent" xml:space="preserve">
+    <value>파일들이 존재함</value>
+  </data>
+  <data name="Confidence_PF_ManyFilesPresent" xml:space="preserve">
+    <value>많은 파일들이 존재함</value>
+  </data>
+  <data name="Confidence_PF_NameIsUsed" xml:space="preserve">
+    <value>프로그램 이름이 인식됨</value>
+  </data>
+  <data name="Confidence_PF_NoSubdirs" xml:space="preserve">
+    <value>하위 디렉토리들이 없음</value>
+  </data>
+  <data name="Confidence_PF_PublisherIsUsed" xml:space="preserve">
+    <value>제조사가 인식됨</value>
+  </data>
+  <data name="Confidence_Startup_IsRunOnce" xml:space="preserve">
+    <value>항목은 한 번만 실행됨</value>
+  </data>
+  <data name="Confidence_Startup_StartupMatched" xml:space="preserve">
+    <value>항목은 응용 프로그램들과 일치함</value>
+  </data>
+  <data name="Junk_Drive_GroupName" xml:space="preserve">
+    <value>파일들과 디렉토리들</value>
+  </data>
+  <data name="Junk_ProgramFilesOrphans_GroupName" xml:space="preserve">
+    <value>프로그램 파일들의 고아 파일들</value>
+  </data>
+  <data name="Junk_Registry_GroupName" xml:space="preserve">
+    <value>레지스트리들</value>
+  </data>
+  <data name="Junk_Startup_GroupName" xml:space="preserve">
+    <value>시작 프로그램들</value>
+  </data>
+  <data name="StartupManager_FailedEnable_FileNotFound" xml:space="preserve">
+    <value>이 항목을 활성화할 수 없습니다. 다음 파일을 찾을 수 없습니다:</value>
+  </data>
+  <data name="UninstallError_UninstallerTimedOut" xml:space="preserve">
+    <value>제거 프로그램 시간 초과</value>
+  </data>
+  <data name="Startup_ShortName_Task" xml:space="preserve">
+    <value>작업들</value>
+    <comment>Fom Task Scheduler</comment>
+  </data>
+  <data name="Startup_Shortname_BrowserHelper" xml:space="preserve">
+    <value>브라우저 도우미 오브젝트들</value>
+  </data>
+  <data name="UninstallListItem_ValueEmpty" xml:space="preserve">
+    <value>값은 null이거나 비어 있어서는 안 됩니다.</value>
+  </data>
+  <data name="UninstallListItem_NewLineInValue" xml:space="preserve">
+    <value>값에는 줄바꿈을 포함할 수 없습니다.</value>
+  </data>
+  <data name="Error_InvalidRegKeys" xml:space="preserve">
+    <value>잘못되었거나 알 수 없는 시작 프로그램 레지스트리 키들:</value>
+  </data>
+  <data name="UninstallerType_StoreApp" xml:space="preserve">
+    <value>윈도우즈 스토어 앱들</value>
+  </data>
+  <data name="UninstallListEditor_NewCondition" xml:space="preserve">
+    <value>새 조건</value>
+  </data>
+  <data name="IsOrphaned" xml:space="preserve">
+    <value>미등록 여부</value>
+    <comment>Present on the HDD but is not properly reported anywhere</comment>
+  </data>
+  <data name="ConfidencePart_IsStoreApp" xml:space="preserve">
+    <value>스토어 응용 프로그램 데이터 삭제에 문제가 있습니다.</value>
+  </data>
+  <data name="UninstallerType_SimpleDelete" xml:space="preserve">
+    <value>단순 삭제</value>
+  </data>
+  <data name="ConfidencePart_AllSubdirsMatched" xml:space="preserve">
+    <value>디렉토리들은 혹은 불필요한 파일들을 삭제한 후에 비워집니다.</value>
+  </data>
+  <data name="Startup_ShortName_Service" xml:space="preserve">
+    <value>서비스들</value>
+  </data>
+  <data name="ComparisonTargetInfo_AllProperties" xml:space="preserve">
+    <value>속성들</value>
+    <comment>Used in the search box to specify what's being compared</comment>
+  </data>
+  <data name="Progress_MSI" xml:space="preserve">
+    <value>설치된 MSI 제품들을 검사하는 중...</value>
+  </data>
+  <data name="Progress_MSI_sub" xml:space="preserve">
+    <value>{0}개의 응용 프로그램 GUID들을 찾았습니다.</value>
+  </data>
+  <data name="Progress_Registry" xml:space="preserve">
+    <value>제거 프로그램들을 위해 레지스트리를 검사하는 중...</value>
+  </data>
+  <data name="Progress_Registry_Gathering" xml:space="preserve">
+    <value>레지스트리 키들을 수집하고 있음</value>
+  </data>
+  <data name="Progress_Registry_Processing" xml:space="preserve">
+    <value>{0}을(를) 처리하고 있음</value>
+  </data>
+  <data name="Progress_GatherUninstallerInfo" xml:space="preserve">
+    <value>누락된 제거 프로그램 정보들을 생성하는 중...</value>
+  </data>
+  <data name="Progress_DriveScan" xml:space="preserve">
+    <value>응용 프로그램들을 위해 드라이브들을 검사하는 중...</value>
+  </data>
+  <data name="Progress_DriveScan_Gathering" xml:space="preserve">
+    <value>디렉토리들을 수집하고 있음</value>
+  </data>
+  <data name="Progress_AppStores" xml:space="preserve">
+    <value>... 응용 프로그램 스토어들을 검사하고 있음</value>
+  </data>
+  <data name="Progress_AppStores_Templates" xml:space="preserve">
+    <value>응용 프로그램 서식들을 검색하고 있음</value>
+  </data>
+  <data name="Progress_AppStores_Steam" xml:space="preserve">
+    <value>스팀 앱들 검색하고 있음</value>
+  </data>
+  <data name="Progress_AppStores_WinStore" xml:space="preserve">
+    <value>윈도우즈 스토어 앱들을 검색하고 있음</value>
+  </data>
+  <data name="Progress_AppStores_WinFeatures" xml:space="preserve">
+    <value>윈도우즈 기능들을 검색하고 있음</value>
+  </data>
+  <data name="Progress_Merging" xml:space="preserve">
+    <value>발견된 응용 프로그램들을 병합하는 중...</value>
+  </data>
+  <data name="Progress_Merging_Stores" xml:space="preserve">
+    <value>스토어들로부터 응용 프로그램들을 병합하는 중</value>
+  </data>
+  <data name="Progress_Merging_Drives" xml:space="preserve">
+    <value>드라이브들로부터 응용 프로그램들을 병합하는 중</value>
+  </data>
+  <data name="Progress_GeneratingInfo" xml:space="preserve">
+    <value>누락된 정보 ....를 생성하고 있음</value>
+  </data>
+  <data name="UninstallerType_WindowsUpdate" xml:space="preserve">
+    <value>윈도우즈 업데이트</value>
+  </data>
+  <data name="Progress_AppStores_WinUpdates" xml:space="preserve">
+    <value>윈도우즈 업데이트들을 검색하고 있음</value>
+  </data>
+  <data name="Junk_FirewallRule_GroupName" xml:space="preserve">
+    <value>방화벽 규칙</value>
+  </data>
+  <data name="Junk_UserAssist_GroupName" xml:space="preserve">
+    <value>사용자 지원</value>
+  </data>
+  <data name="Junk_WerReports_GroupName" xml:space="preserve">
+    <value>윈도우즈 오류 보고 보고서들</value>
+  </data>
+  <data name="Junk_Progress_Startup" xml:space="preserve">
+    <value>불필요한 파일 검사기를 설정하는 중...</value>
+  </data>
+  <data name="Junk_Progress_Finishing" xml:space="preserve">
+    <value>...을 마무리하고 있음</value>
+  </data>
+  <data name="Junk_AppCompat_GroupName" xml:space="preserve">
+    <value>응용 프로그램 호환성</value>
+  </data>
+  <data name="Junk_Clsid_GroupName" xml:space="preserve">
+    <value>CLSID 클래스들</value>
+  </data>
+  <data name="Junk_UninstallerKey_GroupName" xml:space="preserve">
+    <value>제거 프로그램 참조</value>
+  </data>
+  <data name="Junk_UninstallerLocation_GroupName" xml:space="preserve">
+    <value>제거 프로그램 위치</value>
+  </data>
+  <data name="Junk_Shortcut_GroupName" xml:space="preserve">
+    <value>바로 가기</value>
+  </data>
+  <data name="Junk_AudioPolicy_GroupName" xml:space="preserve">
+    <value>오디오 정책 구성</value>
+  </data>
+  <data name="Junk_EventLog_GroupName" xml:space="preserve">
+    <value>이벤트 로그들</value>
+  </data>
+  <data name="Junk_Tracing_GroupName" xml:space="preserve">
+    <value>추적 정보</value>
+  </data>
+  <data name="Junk_InstalledFolders_GroupName" xml:space="preserve">
+    <value>설치된 폴더들의 목록</value>
+  </data>
+  <data name="UninstallStatus_Paused" xml:space="preserve">
+    <value>일시 중지됨</value>
+  </data>
+  <data name="UninstallerType_Chocolatey" xml:space="preserve">
+    <value>Chocolatey</value>
+  </data>
+  <data name="Progress_AppStores_Chocolatey" xml:space="preserve">
+    <value>Chocolatey 꾸러미들을 검색하고 있음</value>
+  </data>
+  <data name="ChocolateyFactory_UninstallInChocolateyJunkName" xml:space="preserve">
+    <value>Chocolatey에서 제거</value>
+    <comment>Shown in junk results window</comment>
+  </data>
+  <data name="HasStartupEntries" xml:space="preserve">
+    <value>자동으로 시작 가능</value>
+  </data>
+  <data name="Progress_Startup" xml:space="preserve">
+    <value>시작 프로그램 항목들을 검색하고 있음</value>
+  </data>
+  <data name="Progress_AppStores_Oculus" xml:space="preserve">
+    <value>Oculus 앱들을 검색하고 있음</value>
+  </data>
+  <data name="UninstallerType_Oculus" xml:space="preserve">
+    <value>Oculus</value>
+  </data>
+  <data name="IsWebBrowser" xml:space="preserve">
+    <value>웹 브라우저 여부</value>
+  </data>
+  <data name="UninstallerType_PowerShell" xml:space="preserve">
+    <value>파워쉘 스크립트</value>
+  </data>
+  <data name="Junk_DebugTracing_GroupName" xml:space="preserve">
+    <value>디버그 추적 및 로깅 구성</value>
+  </data>
+  <data name="Progress_AppStores_Scoop" xml:space="preserve">
+    <value>Scoop 꾸러미들을 검색하고 있음</value>
+  </data>
+  <data name="Confidence_UsedBySimilarNamedApp" xml:space="preserve">
+    <value>비슷한 이름을 가진 다른 앱에 속해 있을 수 있습니다</value>
+    <comment>For example `AppX Extended` matching `AppX` when it belongs to the AppX application</comment>
+  </data>
+  <data name="Confidence_DirectlyInsideKnownFolder" xml:space="preserve">
+    <value>알려진 폴더 안에 직접 위치함</value>
+  </data>
+</root>

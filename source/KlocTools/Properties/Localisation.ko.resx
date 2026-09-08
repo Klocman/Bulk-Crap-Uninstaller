@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Enums_YesNoAsk_Ask" xml:space="preserve">
+    <value>묻기</value>
+  </data>
+  <data name="Error_SeparateArgsFromCommand_Empty" xml:space="preserve">
+    <value>파일 이름은 비워둘 수 없습니다.</value>
+  </data>
+  <data name="Error_SeparateArgsFromCommand_MissingQuotationMark" xml:space="preserve">
+    <value>닫는 따옴표가 누락되었습니다.</value>
+  </data>
+  <data name="Error_SeparateArgsFromCommand_NoDot" xml:space="preserve">
+    <value>파일 이름에는 점으로 구분된 확장자가 포함되어야 합니다.</value>
+  </data>
+  <data name="FileSize_GB_Long" xml:space="preserve">
+    <value>기가바이트</value>
+  </data>
+  <data name="FileSize_GB_Short" xml:space="preserve">
+    <value>GB</value>
+  </data>
+  <data name="FileSize_KB_Long" xml:space="preserve">
+    <value>킬로바이트</value>
+  </data>
+  <data name="FileSize_KB_Short" xml:space="preserve">
+    <value>KB</value>
+  </data>
+  <data name="FileSize_MB_Long" xml:space="preserve">
+    <value>메가바이트</value>
+  </data>
+  <data name="FileSize_MB_Short" xml:space="preserve">
+    <value>MB</value>
+  </data>
+  <data name="FileSize_TB_Long" xml:space="preserve">
+    <value>테라바이트</value>
+  </data>
+  <data name="FileSize_TB_Short" xml:space="preserve">
+    <value>TB</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>아니오</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>예</value>
+  </data>
+  <data name="ToFuzzyTimeSinceString_Days_Since" xml:space="preserve">
+    <value>{0}일 전</value>
+  </data>
+  <data name="ToFuzzyTimeSinceString_Days_Single" xml:space="preserve">
+    <value>어제</value>
+  </data>
+  <data name="ToFuzzyTimeSinceString_Hours_Since" xml:space="preserve">
+    <value>{0}시간 전</value>
+  </data>
+  <data name="ToFuzzyTimeSinceString_Hours_Single" xml:space="preserve">
+    <value>1시간 전</value>
+  </data>
+  <data name="ToFuzzyTimeSinceString_JustNow" xml:space="preserve">
+    <value>방금 전</value>
+  </data>
+  <data name="ToFuzzyTimeSinceString_Minutes_Since" xml:space="preserve">
+    <value>{0}분 전</value>
+  </data>
+  <data name="ToFuzzyTimeSinceString_Minutes_Single" xml:space="preserve">
+    <value>1분 전</value>
+  </data>
+  <data name="ToFuzzyTimeSinceString_Months_Since" xml:space="preserve">
+    <value>{0}달 전</value>
+  </data>
+  <data name="ToFuzzyTimeSinceString_Months_Single" xml:space="preserve">
+    <value>한 달 전</value>
+  </data>
+  <data name="ToFuzzyTimeSinceString_Years_Since" xml:space="preserve">
+    <value>{0}년 전</value>
+  </data>
+  <data name="ToFuzzyTimeSinceString_Years_Single" xml:space="preserve">
+    <value>1년 전</value>
+  </data>
+  <data name="PremadeDialogs_GenericError_InnerExceptionTitle" xml:space="preserve">
+    <value>내부 예외: </value>
+  </data>
+  <data name="PremadeDialogs_GenericError_Heading" xml:space="preserve">
+    <value>예기치 않은 오류가 발생했습니다.</value>
+  </data>
+  <data name="PremadeDialogs_GenericError_Title" xml:space="preserve">
+    <value>예기치 않은 오류</value>
+  </data>
+  <data name="PremadeDialogs_KillRunningProcessesQuestion_Details" xml:space="preserve">
+    <value>저장되지 않은 데이터가 손실될 수 있습니다. 데이터 손실을 방지하려면 응용 프로그램을 수동으로 닫으십시오.</value>
+  </data>
+  <data name="PremadeDialogs_KillRunningProcessesQuestion_Message" xml:space="preserve">
+    <value>모든 프로세스를 종료하시겠습니까?</value>
+  </data>
+  <data name="PremadeDialogs_KillRunningProcessesQuestion_Title" xml:space="preserve">
+    <value>실행 중인 프로세스 종료</value>
+  </data>
+  <data name="RegistryTools_AddRegToRegistry_FileNotExist" xml:space="preserve">
+    <value>경로가 유효한 .reg 파일을 가리키지 않습니다.</value>
+  </data>
+  <data name="RegistryTools_RemoveRegistryKey_PathEmptyNull" xml:space="preserve">
+    <value>경로는 비워둘 수 없으며 null일 수 없습니다.</value>
+  </data>
+  <data name="RegistryTools_RemoveRegistryKey_PointsAtRoot" xml:space="preserve">
+    <value>경로는 루트 키를 가리킬 수 없습니다.</value>
+  </data>
+  <data name="RegistryTools_RemoveRegistryKey_RemoveDefault" xml:space="preserve">
+    <value>기본값을 제거할 수 없습니다.</value>
+  </data>
+  <data name="PremadeDialogs_GenericErrorExtendedSafe_Heading" xml:space="preserve">
+    <value>오류 세부 정보:</value>
+  </data>
+  <data name="PremadeDialogs_GenericError_Details" xml:space="preserve">
+    <value>이 오류로 인해 응용 프로그램이 종료될 필요는 없지만 일부 기능이 작동하지 않을 수 있습니다. 파일 시스템과 관련된 대부분의 오류는 안전하게 무시할 수 있습니다.
+
+오류 메시지: {0}
+
+"복사" 단추를 클릭하면 이 오류에 대한 자세한 정보를 클립보드에 복사할 수 있습니다.
+이 오류 정보를 개발자에게 보내는 것을 고려해 보십시오.
+</value>
+  </data>
+  <data name="FileInfo_CreationTime" xml:space="preserve">
+    <value>만든 시간</value>
+  </data>
+  <data name="FileInfo_LastAccessTime" xml:space="preserve">
+    <value>마지막 접근 시간</value>
+  </data>
+  <data name="FileInfo_LastWriteTime" xml:space="preserve">
+    <value>마지막 수정 시간</value>
+  </data>
+  <data name="FileInfo_Attributes" xml:space="preserve">
+    <value>속성들</value>
+  </data>
+  <data name="FileInfo_IsReadOnly" xml:space="preserve">
+    <value>읽기 전용</value>
+  </data>
+  <data name="FileInfo_FullName" xml:space="preserve">
+    <value>전체 이름</value>
+  </data>
+  <data name="FileInfo_FileName" xml:space="preserve">
+    <value>파일 이름</value>
+  </data>
+  <data name="FileInfo_Size" xml:space="preserve">
+    <value>크기</value>
+  </data>
+  <data name="FileInfo_Directory" xml:space="preserve">
+    <value>디렉토리</value>
+  </data>
+  <data name="FileInfo_Exists" xml:space="preserve">
+    <value>드라이브에 존재함</value>
+  </data>
+  <data name="FileInfo_Comments" xml:space="preserve">
+    <value>설명</value>
+  </data>
+  <data name="FileInfo_CompanyName" xml:space="preserve">
+    <value>회사 이름</value>
+  </data>
+  <data name="FileInfo_FileDescription" xml:space="preserve">
+    <value>설명</value>
+  </data>
+  <data name="FileInfo_FileVersion" xml:space="preserve">
+    <value>파일 판번호</value>
+  </data>
+  <data name="FileInfo_InternalName" xml:space="preserve">
+    <value>내부 이름</value>
+  </data>
+  <data name="FileInfo_Language" xml:space="preserve">
+    <value>언어</value>
+  </data>
+  <data name="FileInfo_LegalCopyright" xml:space="preserve">
+    <value>저작권</value>
+  </data>
+  <data name="FileInfo_LegalTrademarks" xml:space="preserve">
+    <value>상표</value>
+  </data>
+  <data name="FileInfo_OriginalFilename" xml:space="preserve">
+    <value>원래 파일 이름</value>
+  </data>
+  <data name="FileInfo_ProductName" xml:space="preserve">
+    <value>제품 이름</value>
+  </data>
+  <data name="FileInfo_ProductVersion" xml:space="preserve">
+    <value>제품 판번호</value>
+  </data>
+</root>

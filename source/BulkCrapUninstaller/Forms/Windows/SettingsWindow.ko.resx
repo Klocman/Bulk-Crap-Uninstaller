@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="label5.Text" xml:space="preserve">
+    <value>제거 시작 전 명령줄</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>제거 종료 후 명령줄</value>
+  </data>
+  <data name="checkBoxColorblind.Text" xml:space="preserve">
+    <value>색맹 모드</value>
+    <comment>Switches colors to be better for color-blind people</comment>
+  </data>
+  <data name="checkBoxDpiaware.Text" xml:space="preserve">
+    <value>DPI 인식 인터페이스 크기 조정을 사용 설정</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>응용 프로그램 목록에서 두 번 클릭</value>
+  </data>
+  <data name="groupBoxMisc.Text" xml:space="preserve">
+    <value>기타</value>
+  </data>
+  <data name="checkBoxAutoLoad.Text" xml:space="preserve">
+    <value>시작할 때 "Default.bcul"이라는 이름의 제거 목록을 자동으로 불러오기</value>
+  </data>
+  <data name="checkBoxRatings.Text" xml:space="preserve">
+    <value>응용 프로그램들에 대한 사용자 평가 기능을 사용 설정</value>
+  </data>
+  <data name="checkBoxUpdateSearch.Text" xml:space="preserve">
+    <value>시작할 때 업데이트를 검색</value>
+  </data>
+  <data name="checkBoxSendStats.Text" xml:space="preserve">
+    <value>익명 사용 통계를 보냄</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>응용 프로그램 언어:</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>언어 변경 사항이 적용되려면 응용 프로그램을 다시 시작해야 합니다.</value>
+  </data>
+  <data name="radioButtonBackupAsk.Text" xml:space="preserve">
+    <value>항상 생성 여부를 묻기</value>
+  </data>
+  <data name="radioButtonBackupNever.Text" xml:space="preserve">
+    <value>절대 생성 여부를 묻지 않기</value>
+  </data>
+  <data name="radioButtonBackupAuto.Text" xml:space="preserve">
+    <value>디렉토리에 자동으로 생성:</value>
+  </data>
+  <data name="groupBoxBackup.Text" xml:space="preserve">
+    <value>찌꺼기를 제거 전에 백업</value>
+  </data>
+  <data name="checkBoxShowAllBadJunk.Text" xml:space="preserve">
+    <value>신뢰도가 낮아도 찌꺼기를 항상 표시</value>
+  </data>
+  <data name="checkBoxLoud.Text" xml:space="preserve">
+    <value>조용한 작업에서 시끄러운 제거 프로그램을 제거할지 묻기</value>
+  </data>
+  <data name="checkBoxNeverFeedback.Text" xml:space="preserve">
+    <value>피드백이나 도움을 절대 요청 안함</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>제거 후 찌꺼기를 검색</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>제거 전 복원 지점 생성</value>
+  </data>
+  <data name="groupBoxMessages.Text" xml:space="preserve">
+    <value>메시지 상자</value>
+  </data>
+  <data name="checkBoxEnableExternal.Text" xml:space="preserve">
+    <value>외부 응용 프로그램들의 실행을 사용 설정</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>제거 전후에 실행될 명령어를 지정할 수 있습니다. 한 줄은 하나의 명령어에 해당하며 "실행..." 대화 상자를 사용한 것처럼 실행됩니다. 
+
+BCU는 현재 실행 중인 명령어가 완료될 때까지 다음 명령어를 대기합니다.</value>
+  </data>
+  <data name="groupBoxExternal.Text" xml:space="preserve">
+    <value>외부 응용 프로그램들</value>
+  </data>
+  <data name="button2.Text" xml:space="preserve">
+    <value>닫기 (&amp;C)</value>
+  </data>
+  <data name="tabPageGeneral.Text" xml:space="preserve">
+    <value>일반</value>
+  </data>
+  <data name="groupBoxLanguage.Text" xml:space="preserve">
+    <value>언어</value>
+  </data>
+  <data name="tabPageInterface.Text" xml:space="preserve">
+    <value>인터페이스</value>
+  </data>
+  <data name="tabPageUninstallation.Text" xml:space="preserve">
+    <value>제거</value>
+  </data>
+  <data name="labelWinUpdateInfo.Text" xml:space="preserve">
+    <value>f</value>
+  </data>
+  <data name="checkBoxScanWinUpdates.Text" xml:space="preserve">
+    <value>윈도우즈 업데이트</value>
+  </data>
+  <data name="labelWinFeatureInfo.Text" xml:space="preserve">
+    <value>윈도우즈 기능을 찾아낼 때는 WMI를 쓰는데, 일부 시스템에서는 느려지거나 멈출 수 있습니다 (보통 시스템 손상을 나타냄).</value>
+  </data>
+  <data name="checkBoxScanWinFeatures.Text" xml:space="preserve">
+    <value>윈도우즈 기능들</value>
+  </data>
+  <data name="checkBoxScanStoreApps.Text" xml:space="preserve">
+    <value>윈도우즈 스토어 앱들</value>
+  </data>
+  <data name="checkBoxScanSteam.Text" xml:space="preserve">
+    <value>스팀</value>
+  </data>
+  <data name="checkBoxScoop.Text" xml:space="preserve">
+    <value>Scoop</value>
+  </data>
+  <data name="checkBoxOculus.Text" xml:space="preserve">
+    <value>오큘러스 스토어</value>
+  </data>
+  <data name="checkBoxChoco.Text" xml:space="preserve">
+    <value>Chocolatey</value>
+  </data>
+  <data name="groupBoxAppStores.Text" xml:space="preserve">
+    <value>검사할 응용 프로그램 저장소들</value>
+  </data>
+  <data name="checkBoxScanRegistry.Text" xml:space="preserve">
+    <value>레지스트리(활성화 상태로 유지하는 것을 권장)</value>
+  </data>
+  <data name="checkBoxScanDrives.Text" xml:space="preserve">
+    <value>드라이브(등록되지 않은 앱들을 감지)</value>
+  </data>
+  <data name="checkBoxPreDefined.Text" xml:space="preserve">
+    <value>미리 정의된 규칙 기반</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>...에서 응용 프로그램을 검색</value>
+  </data>
+  <data name="tabPageDetection.Text" xml:space="preserve">
+    <value>감지</value>
+  </data>
+  <data name="tabPageExternal.Text" xml:space="preserve">
+    <value>외부 도구들</value>
+  </data>
+  <data name="checkBoxRemovable.Text" xml:space="preserve">
+    <value>이동식 드라이브를 검사</value>
+    <comment>Scan pendrives, USB hard drives, SD Cards, etc.</comment>
+  </data>
+  <data name="checkBoxAutoInstallFolderDetect.Text" xml:space="preserve">
+    <value>사용자 지정 설치 폴더를 자동으로 감지 시도</value>
+  </data>
+  <data name="labelProgramFolders.Text" xml:space="preserve">
+    <value>응용 프로그램들이 설치하는 사용자 지정 폴더들을 따로 지정할 수 있습니다 (보기: D:\Applications). 이 폴더들은 BCU가 지우고 남은 찌꺼기나 올려두지 않은 응용 프로그램, 그 밖에 몇몇 항목들을 찾을 때 쓰입니다. 반드시 채울 필요는 없지만, 이 목록을 넣어주면 BCU가 훨씬 일을 잘합니다.
+
+기본 윈도우즈 폴더들은 항상 검사되므로 이 목록에 따로 넣을 필요가 없습니다.
+
+전체 디렉토리를 적어주시고, 한 줄에 하나씩만 넣으세요. 잘못되었거나 없는 경로나 없는 디렉토리들은 무시합니다.</value>
+  </data>
+  <data name="groupBoxProgramFolders.Text" xml:space="preserve">
+    <value>프로그램 설치 폴더들</value>
+  </data>
+  <data name="tabPageFolders.Text" xml:space="preserve">
+    <value>폴더들</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>시작</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>네트워크</value>
+  </data>
+  <data name="tabPageMisc.Text" xml:space="preserve">
+    <value>기타</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Bulk Crap Uninstaller 설정들</value>
+  </data>
+</root>

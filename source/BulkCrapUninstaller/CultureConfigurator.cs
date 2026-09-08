@@ -84,6 +84,10 @@ namespace BulkCrapUninstaller
                 "de-LU",
                 "de-CH",
 
+                // el - Greek
+                "el-CY",
+                "el-GR",
+
                 // es - Spanish
                 "es-AR",
                 "es-BO",
@@ -122,6 +126,10 @@ namespace BulkCrapUninstaller
 
                 // ja - Japanese
                 "ja-JP",
+
+                // ko - Korean
+                //"ko-KP", // North
+                "ko-KR", // South
 
                 // nl - Dutch
                 "nl-NL",

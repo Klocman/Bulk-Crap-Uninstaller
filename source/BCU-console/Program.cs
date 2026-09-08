@@ -29,16 +29,17 @@ namespace BCU_console
         {
             Console.WriteLine(@"BCU-console [help | /?] - Show help (this screen)
 
-BCU-console uninstall [drive:][path]filename [/Q] [/U] [/V] [/J=<Level>] - Uninstall applications.
+BCU-console uninstall [drive:][path]filename [/Q] [/U] [/V] [/N] [/J=<Level>] - Uninstall applications.
  [drive:][path]	– Specifies drive and directory of the uninstall list.
  filename       – Specifies filename of the .bcul uninstall list that contains information about
                   what applications to uninstall.
 
-BCU-console export [drive:][path]filename [/Q] [/U] [/V] - Export installed application data to xml file.
+BCU-console export [drive:][path]filename [/Q] [/U] [/V] [/F=<Format>] - Export installed application data to a file.
  [drive:][path]	– Specifies drive and directory to where the export should be saved.
- filename       – Specifies filename of the .xml file to save the exported application information to.
+ filename       – Specifies filename of the file to save the exported application information to
+                  (xml by default, json when /F=json is passed).
 
-BCU-console list [/Q] [/U] [/V] - Display a list of installed applications.
+BCU-console list [/Q] [/U] [/V] [/F=<Format>] - Display a list of installed applications.
 
 Switches:
  /Q             - Use quiet uninstallers wherever possible (by default only use loud).
@@ -50,10 +51,18 @@ Switches:
                   EXTREME CAUTION WHEN CHOOSING ANY LEVEL BELOW VeryGood. THERE ARE NO WARRANTIES.
                   Valid levels are: VeryGood, Good, Questionable, Bad, Unknown
  /V             - Verbose logging mode (show more information about what is currently happening).
+ /N             - Dry run (preview) mode. Runs the uninstall task in simulation mode to show which
+                  applications would be uninstalled and, when combined with /J, which junk items
+                  would be removed, without uninstalling or deleting anything. ""--dry-run"" is
+                  also accepted.
+ /F=<Format>    - Output format, valid formats are ""json"" and ""xml"" (the default is a plaintext
+                  table for list and an xml file for export). ""--format=<Format>"" is also accepted.
+                  When this switch is used all progress messages are written to standard error, so
+                  that standard output of ""list"" contains only the serialized document.
 
 Return codes:
  0	- The operation completed successfully.
- 1	- Invalid arguments.
+ 1	- Invalid arguments, or a dry run matched no applications.
  1223	- The operation was canceled by the user.");
         }
 
@@ -96,13 +105,21 @@ Return codes:
         [DllImport("kernel32.dll", SetLastError = true)]
         private static extern uint GetConsoleProcessList(uint[] lpdwProcessList, uint dwProcessCount);
 
+        private static TextWriter _dataOutput;
+      
         private static int Main(string[] args)
         {
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
             Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;
 
-            try { Console.OutputEncoding = Encoding.Unicode; }
+            var isMachineReadable = GetFormatArgument(args) != null;
+
+            try { Console.OutputEncoding = isMachineReadable ? new UTF8Encoding(false) : Encoding.Unicode; }
             catch (SystemException) { }
+
+            _dataOutput = Console.Out;
+            if (isMachineReadable)
+                Console.SetOut(Console.Error);
 
             var info = Assembly.GetExecutingAssembly();
             Console.WriteLine(info.FullName);
@@ -147,7 +164,21 @@ Return codes:
             var isQuiet = args.Any(x => x.Equals("/Q", StringComparison.OrdinalIgnoreCase));
             var isUnattended = args.Any(x => x.Equals("/U", StringComparison.OrdinalIgnoreCase));
 
-            var serializer = new ApplicationEntrySerializer(QueryApps(isQuiet, isUnattended, isVerbose));
+            var format = GetFormatArgument(args);
+            if (format != null && !IsSupportedFormat(format))
+                return ShowInvalidSyntaxError($"Unsupported format \"{format}\", valid formats are \"json\" and \"xml\"");
+
+            var apps = QueryApps(isQuiet, isUnattended, isVerbose);
+
+            if (format != null)
+            {
+                _dataOutput.WriteLine(format.Equals("json", StringComparison.OrdinalIgnoreCase)
+                    ? ApplicationEntrySerializer.SerializeApplicationEntriesToJson(apps)
+                    : ApplicationEntrySerializer.SerializeApplicationEntriesToXml(apps));
+                return 0;
+            }
+
+            var serializer = new ApplicationEntrySerializer(apps);
 
             Console.WriteLine($@"{"Display Name",-40}  {"Version",-20}  {"Source",-40}");
             var sb = new StringBuilder(82);
@@ -188,7 +219,12 @@ Return codes:
             var isQuiet = args.Any(x => x.Equals("/Q", StringComparison.OrdinalIgnoreCase));
             var isUnattended = args.Any(x => x.Equals("/U", StringComparison.OrdinalIgnoreCase));
 
-            args = args.Where(x => !x.StartsWith("/", StringComparison.Ordinal)).ToArray();
+            var format = GetFormatArgument(args);
+            if (format != null && !IsSupportedFormat(format))
+                return ShowInvalidSyntaxError($"Unsupported format \"{format}\", valid formats are \"json\" and \"xml\"");
+
+            args = args.Where(x => !x.StartsWith("/", StringComparison.Ordinal) &&
+                                   !x.StartsWith("--", StringComparison.Ordinal)).ToArray();
             if (args.Length != 1)
                 return ShowInvalidSyntaxError("Missing export filename or invalid arguments");
 
@@ -196,7 +232,10 @@ Return codes:
             var apps = QueryApps(isQuiet, isUnattended, isVerbose);
 
             Console.WriteLine(@"Exporting data...");
-            ApplicationEntrySerializer.SerializeApplicationEntries(args[0], apps);
+            if (format != null && format.Equals("json", StringComparison.OrdinalIgnoreCase))
+                ApplicationEntrySerializer.SerializeApplicationEntriesToJson(args[0], apps);
+            else
+                ApplicationEntrySerializer.SerializeApplicationEntries(args[0], apps);
             Console.WriteLine(@"Success!");
             return 0;
         }
@@ -225,6 +264,8 @@ Return codes:
             var isVerbose = args.Any(x => x.Equals("/V", StringComparison.OrdinalIgnoreCase));
             var isQuiet = args.Any(x => x.Equals("/Q", StringComparison.OrdinalIgnoreCase));
             var isUnattended = args.Any(x => x.Equals("/U", StringComparison.OrdinalIgnoreCase));
+            var isDryRun = args.Any(x => x.Equals("/N", StringComparison.OrdinalIgnoreCase) ||
+                                         x.Equals("--dry-run", StringComparison.OrdinalIgnoreCase));
 
             int junkArgumentIndex = Array.FindIndex(args, a => a.Equals("/J", StringComparison.OrdinalIgnoreCase));
             string junkArg = args.Where(a => a.Equals("/J", StringComparison.OrdinalIgnoreCase) || a.StartsWith("/J=", StringComparison.OrdinalIgnoreCase)).FirstOrDefault() ?? string.Empty;
@@ -241,14 +282,17 @@ Return codes:
                     junkConfidenceLevel = parsedJunkConfidenceLevel;
                 }
             }
-            if (isUnattended)
+            if (isUnattended && !isDryRun)
                 Console.WriteLine(@"WARNING: Running in unattended mode. To abort press Ctrl+C or close the window.");
 
-            return RunUninstall(list, isQuiet, isUnattended, isVerbose, junkConfidenceLevel);
+            return RunUninstall(list, isQuiet, isUnattended, isVerbose, isDryRun, junkConfidenceLevel);
         }
 
-        private static int RunUninstall(UninstallList list, bool isQuiet, bool isUnattended, bool isVerbose, ConfidenceLevel? junkConfidenceLevel = null)
+        private static int RunUninstall(UninstallList list, bool isQuiet, bool isUnattended, bool isVerbose, bool isDryRun, ConfidenceLevel? junkConfidenceLevel = null)
         {
+            if (isDryRun)
+                Console.WriteLine(@"DRY RUN: Nothing will be uninstalled and no files or registry entries will be deleted.");
+
             Console.WriteLine(@"Starting bulk uninstall...");
             var apps = QueryApps(isQuiet, isUnattended, isVerbose);
 
@@ -257,15 +301,16 @@ Return codes:
             if (apps.Count == 0)
             {
                 Console.WriteLine(@"No applications matched the supplied uninstall list.");
-                return 0;
+                return isDryRun ? 1 : 0;
             }
 
             Console.WriteLine(@"{0} application(s) were matched by the list: {1}", apps.Count,
                           string.Join("; ", apps.Select(x => x.DisplayName)));
 
-            Console.WriteLine(@"These applications will now be uninstalled PERMANENTLY.");
+            if (!isDryRun)
+                Console.WriteLine(@"These applications will now be uninstalled PERMANENTLY.");
 
-            if (!isUnattended)
+            if (!isUnattended && !isDryRun)
             {
                 Console.WriteLine(@"Do you want to continue? [Y]es/[N]o");
                 if (Console.ReadKey(true).Key != ConsoleKey.Y)
@@ -276,7 +321,7 @@ Return codes:
             var targets = apps.Select(a => new BulkUninstallEntry(a, a.QuietUninstallPossible, UninstallStatus.Waiting))
                 .ToList();
             var task = UninstallManager.CreateBulkUninstallTask(targets,
-                new BulkUninstallConfiguration(false, isQuiet, false, true, true));
+                new BulkUninstallConfiguration(false, isQuiet, isDryRun, true, true));
             var isDone = false;
             task.OnStatusChanged += (sender, args) =>
             {
@@ -308,18 +353,24 @@ Return codes:
 
             if (junkConfidenceLevel is not null) {
                 Console.WriteLine($"Starting junk cleanup with a minimum confidence level of {junkConfidenceLevel}");
+                if (isDryRun)
+                    Console.WriteLine(@"Note: The applications are still installed, so results may differ from the actual cleanup performed after they are uninstalled.");
                 List<IJunkResult> remainingJunk = JunkManager.FindJunk(apps, apps, _ => { })
                     .Where(j => j.Confidence.GetConfidence() >= junkConfidenceLevel)
                     .ToList();
 
                 if (!remainingJunk.Any()) {
                     Console.WriteLine($"No remaining junk found for any target applications.");
+                    if (isDryRun)
+                        Console.WriteLine(@"Dry run finished. No changes were made.");
                     return 0;
                 }
 
-                Console.WriteLine("The following junk items will be permanently deleted:");
+                Console.WriteLine(isDryRun
+                    ? "The following junk items would be permanently deleted:"
+                    : "The following junk items will be permanently deleted:");
                 remainingJunk.ForEach(Console.WriteLine);
-                if (!isUnattended) {
+                if (!isUnattended && !isDryRun) {
                     Console.WriteLine(@"Do you want to continue? [Y]es/[N]o");
                     if (Console.ReadKey(true).Key != ConsoleKey.Y)
                         return CancelledByUser();
@@ -329,14 +380,24 @@ Return codes:
                     // ApplicationUninstallerEntry doesn't currently implement an equality operator so ToLongString() will do as an object "hash".
                     List<IJunkResult> appJunk = remainingJunk.Where(j => j.Application.ToLongString().Equals(entry.ToLongString())).ToList();
                     Console.WriteLine($"{entry.DisplayName} Junk - {appJunk.Count} Entries Found");
-                    appJunk.ForEach(j => j.Delete());
+                    if (!isDryRun)
+                        appJunk.ForEach(j => j.Delete());
                 }
             }
+
+            if (isDryRun)
+                Console.WriteLine(@"Dry run finished. No changes were made.");
             return 0;
         }
 
         public static void ClearCurrentConsoleLine()
         {
+            if (Console.IsOutputRedirected)
+            {
+                Console.WriteLine();
+                return;
+            }
+
             var currentLineCursor = Console.CursorTop;
             Console.SetCursorPosition(0, Console.CursorTop);
             Console.Write(new string(' ', Console.WindowWidth));
@@ -399,6 +460,24 @@ Return codes:
         {
             Console.WriteLine("Invalid command syntax. " + message);
             return 87;
+        }
+
+        private static string GetFormatArgument(string[] args)
+        {
+            foreach (var arg in args)
+            {
+                if (arg.StartsWith("/F=", StringComparison.OrdinalIgnoreCase))
+                    return arg.Substring("/F=".Length);
+                if (arg.StartsWith("--format=", StringComparison.OrdinalIgnoreCase))
+                    return arg.Substring("--format=".Length);
+            }
+            return null;
+        }
+
+        private static bool IsSupportedFormat(string format)
+        {
+            return format.Equals("json", StringComparison.OrdinalIgnoreCase) ||
+                   format.Equals("xml", StringComparison.OrdinalIgnoreCase);
         }
     }
 }
